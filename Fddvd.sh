@@ -116,7 +116,7 @@ if [ $real_addr == $local_addr ] ; then
 	~/.acme.sh/acme.sh  --issue  -d $your_domain  --webroot /usr/share/nginx/html/
     	~/.acme.sh/acme.sh  --installcert  -d  $your_domain   \
         --key-file   /root/trojan-go/server.key \
-        --fullchain-file /root/trojan-go/server.cer \
+        --fullchain-file /root/trojan-go/server.cert \
         --reloadcmd  "systemctl force-reload  nginx.service"
 	#systemctl stop nginx.service
 	yellow "nohup /root/trojan-go/trojan-go -config /root/trojan-go/server.yaml >trojan-go.log 2<&1 &"
